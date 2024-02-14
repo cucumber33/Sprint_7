@@ -1,9 +1,8 @@
-package org.example.CourierTest;
+package steps;
 
 import io.qameta.allure.Step;
-import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
+import org.example.BaseClient;
 import org.example.Courier;
 
 import static io.restassured.RestAssured.given;
@@ -11,14 +10,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 
-public class CourierSteps {
-
-    public static RequestSpecification requestSpec() {
-        return given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri("http://qa-scooter.praktikum-services.ru/");
-    }
-
+public class CourierSteps extends BaseClient {
     @Step("Регистрация нового курьера")
     public ValidatableResponse createCourier(Courier courier) {
         return requestSpec()

@@ -1,4 +1,4 @@
-package org.example.OrderTest;
+package org.example.order.test;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import steps.OrderSteps;
 
 import java.util.List;
 

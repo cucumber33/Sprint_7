@@ -1,20 +1,13 @@
-package org.example.OrderTest;
+package steps;
 
 import io.qameta.allure.Step;
-import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
+import org.example.BaseClient;
 import org.example.Order;
 
 import static io.restassured.RestAssured.given;
 
-public class OrderSteps {
-
-    public static RequestSpecification requestSpec() {
-        return given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri("http://qa-scooter.praktikum-services.ru/");
-    }
+public class OrderSteps extends BaseClient {
 
     @Step("Создание заказа")
     public ValidatableResponse createNewOrder(Order order) {
